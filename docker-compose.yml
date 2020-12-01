@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  ent-container:
+    image: cltt168/ent-image
+    container_name: ent-container
+    #hostname: pricewatch-cron
+    shm_size: '2G'
+    #restart: always
+    volumes:
+#      - /data/pw/ch-cron/src:/var/pricewatch
+      - .:/usr/src/play
+    command: tail -f /dev/null
+    #command: "/usr/sbin/cron -f"
+    #test
